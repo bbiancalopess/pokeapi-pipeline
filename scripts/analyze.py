@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
-import seaborn as sea
 
 # Função para gerar o gráfico de contagem por tipo
 def generate_type_count_bar_graph(df):
     type_counts = df.explode("Tipos")["Tipos"].value_counts()
     plt.figure(figsize=(12, 6))
-    sea.barplot(x=type_counts.index, y=type_counts.values)
+    plt.bar(type_counts.index, type_counts.values)
     plt.title("Contagem de Pokémon por Tipo")
     plt.xlabel("Tipo")
     plt.ylabel("Contagem")
