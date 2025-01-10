@@ -1,18 +1,27 @@
 import requests
 import logging
 
+# Função para buscar a lista de pokémons com limite e offset
 def fetch_pokemon_list(limit=100, offset=0):
     url = f"https://pokeapi.co/api/v2/pokemon?limit={limit}&offset={offset}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()["results"]
-    else:
-        raise Exception(f"API error: {response.status_code}")
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()["results"]
+        else:
+            raise requests.exceptions.HTTPError(f"HTTP error: {response.status_code}")
+    except Exception as err:
+        logging.error(f"Error: {err}")
+    return []
 
-# refatorar para buscar apenas as informações que preciso, /pokemon/{id} faz uma chamada de api para cada informação do pokemon, exemplo, para moves ele faz /move/1/
+# Função para buscar os detalhes de um pokémon
 def fetch_pokemon_details(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        raise Exception(f"API error: {response.status_code}")
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            raise requests.exceptions.HTTPError(f"HTTP error: {response.status_code}")
+    except Exception as err:
+        logging.error(f"Error: {err}")
+    return {}

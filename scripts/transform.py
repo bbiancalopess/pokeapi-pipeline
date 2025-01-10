@@ -1,5 +1,6 @@
 import pandas as pd
 
+# Função para organizar os dados dos pokémons
 def structure_pokemon_data(pokemons):
     data = []
     for pokemon in pokemons:
