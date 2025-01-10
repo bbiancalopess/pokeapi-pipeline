@@ -1,0 +1,6 @@
+ID,Nome,Experiência,Tipos,HP,Ataque,Defesa,Categoria
+6,charizard,267,"['fire', 'flying']",78,84,78,Forte
+9,blastoise,265,['water'],79,83,100,Forte
+3,venusaur,263,"['grass', 'poison']",80,82,83,Forte
+62,poliwrath,255,"['water', 'fighting']",90,95,95,Forte
+31,nidoqueen,253,"['poison', 'ground']",90,92,87,Forte

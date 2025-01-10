@@ -17,28 +17,5 @@ def generate_type_count_bar_graph(df):
 def calculate_stats_mean_per_type(df):
     return df.explode("Tipos").groupby("Tipos")[["Ataque", "Defesa", "HP"]].mean().reset_index()
 
-def generate_mean_per_type_grouped_bars_graph(df):
-    df_long = df.melt(id_vars="Tipos", var_name="Atributo", value_name="Valor")
-
-    plt.figure(figsize=(12, 6))
-    sea.barplot(data=df_long,x="Tipos", y="Valor", hue="Atributo")
-    plt.title("Atributos Médios por Tipo")
-    plt.xlabel("Valor médio")
-    plt.ylabel("Tipos")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    return plt
-
 def get_n_best_pokemon_by_experience(df, top_n):
     return df.nlargest(top_n, "Experiência")
-
-def generate_best_pokemon_by_experience_graph(df):
-    df_filtered = df[["Nome", "Experiência"]]
-    print(df_filtered)
-    sea.barplot(data=df_filtered, x="Experiência", y="Nome", orient="h")
-    plt.title("Melhores pokémons por Experiência Base")
-    plt.xlabel("Experiência")
-    plt.ylabel("Pokémon")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    return plt    
