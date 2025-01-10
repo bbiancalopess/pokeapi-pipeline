@@ -1,6 +1,13 @@
 import requests
 import logging
 
+logging.basicConfig(
+    level=logging.INFO, 
+    filename="logs/pipeline.log", 
+    filemode="a",
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
 # Função para buscar a lista de pokémons com limite e offset
 def fetch_pokemon_list(limit=100, offset=0):
     url = f"https://pokeapi.co/api/v2/pokemon?limit={limit}&offset={offset}"

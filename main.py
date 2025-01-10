@@ -7,19 +7,19 @@ import logging
 # Função principal
 def main():
     # Busca lista de pokemóns
-    logging.info("Buscando lista dde pokémons...")
+    logging.info("Buscando lista dde pokemons...")
     pokemons = fetch_pokemon_list(limit=100, offset=0)
 
     if not pokemons:
-        logging.error("Falha ao buscar a lista de pokémons")
+        logging.error("Falha ao buscar a lista de pokemons")
         return
 
     # Busca detalhes dos pokémons
-    logging.info("Buscando detalhes dos pokémons...")
+    logging.info("Buscando detalhes dos pokemons...")
     pokemons_datas = [fetch_pokemon_details(pokemon["url"]) for pokemon in pokemons]
     
     # Estrutura os dados dos pokémons
-    logging.info("Estruturando dados dos pokémons...")
+    logging.info("Estruturando dados dos pokemons...")
     df = structure_pokemon_data(pokemons_datas)
     
     # Gera gráfico de contagem de pokémons por tipo
@@ -33,7 +33,7 @@ def main():
     df_mean_per_type = calculate_stats_mean_per_type(df)
 
     # Salva relatórios CSV
-    logging.info("Salvando relatórios...")
+    logging.info("Salvando relatorios...")
     save_report(df_mean_per_type, df_best_pokemon_by_experience)
 
 if __name__ == "__main__":
