@@ -1,0 +1,8 @@
+version: "3.13"
+services:
+  pokemon-pipeline:
+    build:
+    volumes:
+      - .data:/app/data
+      - .logs/:app/logs
+    command: python main.py
