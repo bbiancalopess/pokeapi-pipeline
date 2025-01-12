@@ -2,6 +2,7 @@ import os
 
 # Função para salvar um gráfico
 def save_plot(plot, filename):
+    os.makedirs("data/", exist_ok=True)
     plot.savefig(filename)
 
 # Função para salvar os relatórios em formato CSV
