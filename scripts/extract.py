@@ -1,6 +1,7 @@
 import requests
 import logging
 import os
+from concurrent.futures import ThreadPoolExecutor 
 
 os.makedirs("logs/", exist_ok=True)
 
@@ -35,3 +36,8 @@ def fetch_pokemon_details(url):
     except Exception as err:
         logging.error(f"Error: {err}")
     return {}
+
+def fetch_all_pokemon_details(pokemons):
+    with ThreadPoolExecutor() as executor:
+        results = list(executor.map(lambda p: fetch_pokemon_details(p["url"]), pokemons))
+    return results
