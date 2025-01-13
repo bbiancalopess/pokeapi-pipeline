@@ -1,0 +1,6 @@
+ID,Nome,Experiência,Tipos,HP,Ataque,Defesa,Categoria,Imagem
+6,Charizard,267,"['Fire', 'Flying']",78,84,78,Forte,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png
+9,Blastoise,265,['Water'],79,83,100,Forte,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png
+3,Venusaur,263,"['Grass', 'Poison']",80,82,83,Forte,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png
+62,Poliwrath,255,"['Water', 'Fighting']",90,95,95,Forte,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png
+31,Nidoqueen,253,"['Poison', 'Ground']",90,92,87,Forte,https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png
