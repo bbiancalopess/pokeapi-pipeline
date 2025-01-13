@@ -1,7 +1,7 @@
 from scripts.extract import fetch_pokemon_list, fetch_all_pokemon_details
 from scripts.transform import structure_pokemon_data
-from scripts.analyze import generate_type_count_bar_graph, calculate_stats_mean_per_type, get_n_best_pokemon_by_experience
-from scripts.export import save_plot, save_report
+from scripts.analyze import generate_type_count_bar_graph, calculate_stats_mean_per_type, get_n_best_pokemon_by_experience, generate_top_pokemon_interactive_bar
+from scripts.export import save_plot, save_report, save_interactive_plot
 import logging
 
 # Função principal
@@ -37,6 +37,10 @@ def main():
         # Salva relatórios CSV
         logging.info("Salvando relatorios...")
         save_report(df_mean_per_type, df_best_pokemon_by_experience)
+
+        interactive_plot = generate_top_pokemon_interactive_bar(df)
+        save_interactive_plot(interactive_plot, "data/top_pokemon_interactive.html")
+
     except Exception as err:
         logging.error(f"Erro inesperado: {err}")
 

@@ -29,6 +29,7 @@ def structure_pokemon_data(pokemons):
             "HP": stats.get("hp"),
             "Ataque": stats.get("attack"),
             "Defesa": stats.get("defense"),
-            "Categoria": category
+            "Categoria": category,
+            "Imagem": pokemon["sprites"]["front_default"]
         })
     return pd.DataFrame(data)

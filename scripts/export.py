@@ -19,3 +19,11 @@ def save_report(df_mean_by_type, df_best_pokemons):
         logging.info("Relatorio salvo com sucesso em data/")
     except Exception as err:
         logging.error(f"Erro ao salvar relatorio: {err}")
+
+def save_interactive_plot(fig, filename):
+    try:
+        os.makedirs("data/", exist_ok=True)
+        fig.write_html(filename)
+        logging.info(f"Grafico interativo salvo com sucesso em {filename}")
+    except Exception as err:
+        logging.error(f"Erro ao salvar grafico interativo: {err}")
