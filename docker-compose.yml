@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    container_name: pokemon_pipeline
+    container_name: pokeapi_pipeline
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
